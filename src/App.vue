@@ -1,7 +1,3 @@
-<script></script>
-
 <template>
-  <div class="text-3xl font-bold underline">Hello World</div>
+  <router-view></router-view>
 </template>
-
-<style scoped></style>
