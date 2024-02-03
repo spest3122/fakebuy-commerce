@@ -1,7 +1,15 @@
 <template>
-  <div class="text-3xl font-bold">Hello</div>
+  <Header></Header>
+  <Main></Main>
 </template>
 <script>
-export default {};
+import Header from "./Header.vue";
+import Main from "./Main.vue";
+export default {
+  components: {
+    Header,
+    Main,
+  },
+};
 </script>
 <style></style>
