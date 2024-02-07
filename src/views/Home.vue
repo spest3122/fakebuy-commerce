@@ -1,5 +1,5 @@
 <template>
-  <div class="min-h-full bg-white">
+  <div class="min-h-full">
     <Nav @toggleDialog="toggleDialog"></Nav>
     <Drawer :show="showDialog" @toggleDialog="toggleDialog"></Drawer>
     <Header></Header>
