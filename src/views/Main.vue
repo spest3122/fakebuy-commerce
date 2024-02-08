@@ -1,9 +1,31 @@
 <template>
   <div
-    class="mx-auto max-w-2xl px-4 py-8 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8"
+    class="mx-auto max-w-2xl px-4 pb-8 sm:px-6 sm:pb-24 lg:max-w-7xl lg:px-8"
   >
-    <h2 class="sr-only">Products</h2>
+    <div class="flex items-center">
+      <div class="mt-2 mr-2 rounded-md shadow-sm flex-1">
+        <input
+          type="text"
+          name="price"
+          id="price"
+          class="block w-full rounded-md border-0 py-1.5 pl-7 pr-20 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm"
+          placeholder="search"
+        />
+      </div>
+      <div class="mt-2 rounded-md shadow-sm self-atuo">
+        <select
+          name="filter"
+          id="filter"
+          class="block h-100 w-full rounded-md border-0 py-1.5 pl-5 pr-20 text-gray-900 ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-base sm:leading-6"
+        >
+          <option v-for="item in searchFilter" :key="`filter-${item.name}`">
+            {{ item.name }}
+          </option>
+        </select>
+      </div>
+    </div>
 
+    <h2 class="text-2xl">Products</h2>
     <div
       class="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8"
     >
@@ -82,6 +104,32 @@ const products = [
     imageAlt: "Front of men's Basic Tee in black.",
     price: "$35",
     color: "Black",
+  },
+];
+const searchFilter = [
+  {
+    id: 1,
+    name: "Price (ASC)",
+  },
+  {
+    id: 2,
+    name: "Price (DESC)",
+  },
+  {
+    id: 3,
+    name: "Title (ASC)",
+  },
+  {
+    id: 4,
+    name: "Title (DESC)",
+  },
+  {
+    id: 5,
+    name: "Last Modified at the top",
+  },
+  {
+    id: 6,
+    name: "Last Modified at the bottom",
   },
 ];
 </script>
